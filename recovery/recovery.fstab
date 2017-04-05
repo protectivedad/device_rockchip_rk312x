@@ -1,0 +1,17 @@
+/parameter  emmc        /dev/block/rknand_parameter
+/uboot      emmc        /dev/block/rknand_uboot      flags=backup=1;display=UBoot
+/misc       emmc        /dev/block/rknand_misc       flags=backup=1;display=Misc
+/resource   emmc        /dev/block/rknand_resource   flags=backup=1;display=Resource
+/kernel     emmc        /dev/block/rknand_kernel     flags=backup=1;display=Kernel
+/recovery   emmc        /dev/block/rknand_recovery   flags=backup=0;display=Recovery
+/boot       emmc        /dev/block/rknand_boot       flags=backup=1;display=Boot
+/backup     emmc        /dev/block/rknand_backup     flags=backup=1;display=Backup
+/cache      ext4        /dev/block/rknand_cache      flags=backup=1
+/metadata   ext4        /dev/block/rknand_metadata   flags=backup=0;wipeingui;wipeduringfactoryreset;display=Metadata
+/kpanic     emmc        /dev/block/rknand_kpanic
+/system     ext4        /dev/block/rknand_system     flags=backup=1;display=System
+/data       ext4        /dev/block/rknand_userdata
+/external_sd    auto    /dev/block/mmcblk0p1         flags=display="External SD";wipeingui;storage;removable
+/sd-ext     auto        /dev/block/mmcblk0p2         flags=display="External Data";backup=1;wipeingui;wipeduringfactoryreset;removable
+/usb-otg    auto        /dev/block/sda1              flags=display="USB Storage";storage;wipeingui;removable
+#Dummy Line
