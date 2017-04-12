@@ -14,7 +14,8 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3 \
+    Amazon_App
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rk.hdmi_enable = false \
