@@ -44,11 +44,13 @@ DEVICE_RESOLUTION := 800x480
 #TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 
 PRODUCT_COPY_FILES += \
-		device/rockchip/rk312x/audio_policy.conf:system/etc/audio_policy.conf \
+    device/rockchip/rk312x/audio_policy.conf:system/etc/audio_policy.conf \
     device/rockchip/rk312x/fstab.$(TARGET_BOARD_HARDWARE).bootmode.unknown:root/fstab.$(TARGET_BOARD_HARDWARE).bootmode.unknown \
     device/rockchip/rk312x/fstab.$(TARGET_BOARD_HARDWARE).bootmode.emmc:root/fstab.$(TARGET_BOARD_HARDWARE).bootmode.emmc \
+    device/rockchip/rk312x/init.connectivity.rc:root/init.connectivity.rc \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).bootmode.emmc.rc:root/init.$(TARGET_BOARD_HARDWARE).bootmode.emmc.rc \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc:root/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc \
+    device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).rc:root/init.$(TARGET_BOARD_HARDWARE).rc
 
 # f2fs
 TARGET_USERIMAGES_USE_F2FS := true
@@ -64,19 +66,20 @@ PRODUCT_HAVE_NAND := true
 PRODUCT_HAVE_GPS := false
 PRODUCT_HAVE_RKAPPS := false
 PRODUCT_HAVE_RKTOOLS := false
-PRODUCT_HAVE_RKPHONE_FEATURES := false
+PRODUCT_HAVE_RKPHONE_FEATURES := true
 PRODUCT_HAVE_OPTEE := false
 PRODUCT_HAVE_ADBLOCK := false
 
 # Features to add/remove
 BUILD_WITH_UMS := false
-#BOARD_WITH_BOOT_BOOST := true
+BOARD_WITH_BOOT_BOOST := true
 
 # Hardware
 BOARD_HAVE_BLUETOOTH := false
 BOARD_HAVE_BLUETOOTH_CSR := false
 BOARD_HS_ETHERNET := false
 BOARD_HAS_GPS := false
+BOARD_SENSOR_ST := true
 
 # Fonts
 MINIMAL_FONT_FOOTPRINT := true
@@ -100,4 +103,4 @@ RECOVERY_SDCARD_ON_DATA := true
 TW_THEME := landscape_mdpi
 
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
+TARGET_USERIMAGES_SPARSE_EXT_DISABLED := false

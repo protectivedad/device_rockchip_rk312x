@@ -19,5 +19,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rk.hdmi_enable = false \
     ro.product.version = 1.0.0 \
-    ro.product.ota.host = 127.0.0.1:2300
+    ro.product.ota.host = 127.0.0.1:2300 \
+    ro.target.product = tablet
 
