@@ -37,6 +37,7 @@ on init
     mkdir /usb-otg
 
     symlink /sbin/busybox /system/bin/sh
+
     mount tmpfs tmpfs /tmp
 
     chown root shell /tmp

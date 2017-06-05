@@ -19,7 +19,8 @@ BOARD_USE_LOW_MEM := false
 BOARD_HAVE_BLUETOOTH := false
 PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk312x/overlay
 
-TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel
+#TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt9650g
+TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt1065g
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
@@ -40,8 +41,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/gadget/lun%d/fi
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 BOARD_UMS_2ND_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun1/file"
 BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_15x24.h\"
-DEVICE_RESOLUTION := 800x480
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
 
 PRODUCT_COPY_FILES += \
     device/rockchip/rk312x/audio_policy.conf:system/etc/audio_policy.conf \
@@ -51,6 +50,9 @@ PRODUCT_COPY_FILES += \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).bootmode.emmc.rc:root/init.$(TARGET_BOARD_HARDWARE).bootmode.emmc.rc \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc:root/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).rc:root/init.$(TARGET_BOARD_HARDWARE).rc
+
+PRODUCT_COPY_FILES += \
+    device/rockchip/rk312x/esp_init_data.bin:system/lib/modules/esp_init_data.bin
 
 # f2fs
 TARGET_USERIMAGES_USE_F2FS := true
@@ -64,15 +66,15 @@ PRODUCT_COPY_FILES += \
 # Vendor overrides
 PRODUCT_HAVE_NAND := true
 PRODUCT_HAVE_GPS := false
-PRODUCT_HAVE_RKAPPS := false
-PRODUCT_HAVE_RKTOOLS := false
+PRODUCT_HAVE_RKAPPS := true
+PRODUCT_HAVE_RKTOOLS := true
 PRODUCT_HAVE_RKPHONE_FEATURES := true
 PRODUCT_HAVE_OPTEE := false
 PRODUCT_HAVE_ADBLOCK := false
 
 # Features to add/remove
 BUILD_WITH_UMS := false
-BOARD_WITH_BOOT_BOOST := true
+BOARD_WITH_BOOT_BOOST := false
 
 # Hardware
 BOARD_HAVE_BLUETOOTH := false

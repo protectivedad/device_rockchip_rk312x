@@ -5,7 +5,8 @@ PRODUCT_BRAND := Proscan
 PRODUCT_DEVICE := rk312x
 PRODUCT_NAME := rk312x
 PRODUCT_MANUFACTURER := Proscan
-PRODUCT_MODEL := PLT9650G
+#PRODUCT_MODEL := PLT9650G
+PRODUCT_MODEL := PLT1065G
 
 # Override appt config
 PRODUCT_AAPT_CONFIG := normal large xlarge mdpi
@@ -15,7 +16,8 @@ PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PACKAGES += \
     Launcher3 \
-    Amazon_App
+    Amazon_App \
+    AppOps
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.rk.hdmi_enable = false \
