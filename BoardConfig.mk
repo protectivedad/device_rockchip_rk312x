@@ -19,8 +19,8 @@ BOARD_USE_LOW_MEM := false
 BOARD_HAVE_BLUETOOTH := false
 PRODUCT_PACKAGE_OVERLAYS += device/rockchip/rk312x/overlay
 
-#TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt9650g
-TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt1065g
+TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt9650g
+#TARGET_PREBUILT_KERNEL := device/rockchip/rk312x/kernel.plt1065g
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
@@ -51,8 +51,8 @@ PRODUCT_COPY_FILES += \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc:root/init.$(TARGET_BOARD_HARDWARE).bootmode.unknown.rc \
     device/rockchip/rk312x/init.$(TARGET_BOARD_HARDWARE).rc:root/init.$(TARGET_BOARD_HARDWARE).rc
 
-PRODUCT_COPY_FILES += \
-    device/rockchip/rk312x/esp_init_data.bin:system/lib/modules/esp_init_data.bin
+#PRODUCT_COPY_FILES += \
+#    device/rockchip/rk312x/esp_init_data.bin:system/lib/modules/esp_init_data.bin
 
 # f2fs
 TARGET_USERIMAGES_USE_F2FS := true

@@ -145,7 +145,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 ########## kernel version >= 3.10.x ##########
 	
 # for rtl wifi
-service rtw_suppl_con /system/bin/wpa_supplicant_rtl \
+service rtw_suppl_con /system/bin/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
     -e/data/misc/wifi/entropy.bin -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -156,7 +156,7 @@ service rtw_suppl_con /system/bin/wpa_supplicant_rtl \
     disabled
     oneshot
 
-service rtw_suppl /system/bin/wpa_supplicant_rtl \
+service rtw_suppl /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
@@ -166,7 +166,7 @@ service rtw_suppl /system/bin/wpa_supplicant_rtl \
     oneshot
 
 # for esp wifi
-service esp_supplicant /system/bin/wpa_supplicant \
+service esp_supplicant /system/bin/wpa_supplicant_esp \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf -N \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
