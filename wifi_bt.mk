@@ -39,11 +39,8 @@
 #           rda587x,         #like  rtl8188+rda587x
 #           mt6622,          #like  rtl8188+mt6622 
 #
-<<<<<<< HEAD
 #BOARD_CONNECTIVITY_VENDOR := Espressif
 #BOARD_CONNECTIVITY_MODULE := esp8089
 
-=======
->>>>>>> 0252b0969f9e4594d9a6337a36f1f42fb713d272
 BOARD_CONNECTIVITY_VENDOR := RealTek
 BOARD_CONNECTIVITY_MODULE := rtl81xx
